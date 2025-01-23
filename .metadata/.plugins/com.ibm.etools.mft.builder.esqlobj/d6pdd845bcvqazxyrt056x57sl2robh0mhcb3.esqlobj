@@ -1,0 +1,20 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		 /*          --COALESCE FUNCTION
+			DECLARE inref REFERENCE TO InputRoot.XMLNSC.Customer.Details;
+			SET OutputRoot.XMLNSC.Customer.Details.Info = inref.FirstName||' '||inref.LastName||', '||COALESCE(inref.Address,'No Address Found');
+	*/
+	       /*         --OVERLAY FUNCTION
+	                DECLARE myString CHAR;
+                  SET myString = 'ADITYAKALDATE';
+                  SET OutputRoot.XMLNSC.Overlayed = OVERLAY(myString PLACING '1234' FROM 4 FOR 2 );
+	                
+			*/
+			
+		/*	--   REPLACE FUNTION
+				  DECLARE myString CHAR;
+                  SET myString = 'ADITYAKALDATE';
+                  SET OutputRoot.XMLNSC.Replced = REPLACE(myString,'A','AA' );
+            */
+          DEC            
+	END;

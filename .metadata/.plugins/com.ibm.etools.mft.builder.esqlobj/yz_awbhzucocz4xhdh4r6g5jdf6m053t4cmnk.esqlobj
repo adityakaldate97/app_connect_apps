@@ -1,0 +1,8 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		
+			DECLARE inref REFERENCE TO InputRoot.XMLNSC.Customer.Details;
+			SET OutputRoot.XMLNSC.Customer.Details.Info = inref.FirstName||' '||inref.LastName||', '||inref.Address;
+			
+			
+	END;

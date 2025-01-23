@@ -1,0 +1,9 @@
+CREATE COMPUTE MODULE IN_OUT_MF_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+			DECLARE Inref REFERENCE TO InputRoot.XMLNSC.root ;
+			
+			SET OutputRoot.JSON.new_root.new_data = Inref.data; 
+			SET OutputRoot.JSON.new_root.new_data1 = Inref.data1;
+	END;
+END MODULE;

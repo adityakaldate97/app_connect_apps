@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s xmlns:tns="http://www.ibm.com/dfdl/CommaSeparatedFormat" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/dfdl/CommaSeparatedFormat IBMdefined/CommaSeparatedFormat.xsd ">
+  <Customer>
+    <name xsi:type="xs:string">aditya</name>
+    <id xsi:type="xs:string">1161</id>
+    <address xsi:type="xs:string">pune</address>
+    <city xsi:type="xs:string">pune</city>
+    <country xsi:type="xs:string">india</country>
+  </Customer>
+</s>

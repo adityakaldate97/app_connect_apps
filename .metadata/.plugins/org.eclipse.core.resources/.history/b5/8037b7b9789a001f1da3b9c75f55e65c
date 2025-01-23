@@ -1,0 +1,17 @@
+import com.ibm.broker.javacompute.MbJavaComputeNode;
+import com.ibm.broker.plugin.MbException;
+import com.ibm.broker.plugin.MbMessage;
+import com.ibm.broker.plugin.MbMessageAssembly;
+import com.ibm.broker.plugin.MbOutputTerminal;
+import com.ibm.broker.plugin.MbUserException;
+
+public class Encrypt_mf_JavaCompute extends MbJavaComputeNode {
+
+	public void evaluate(MbMessageAssembly inAssembly) throws MbException {
+		MbOutputTerminal out = getOutputTerminal("out");
+		MbOutputTerminal alt = getOutputTerminal("alternate");
+
+		MbMessage inMessage = inAssembly.getMessage();
+		MbMessageAssembly outAssembly = null;
+		
+		

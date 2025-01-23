@@ -1,0 +1,10 @@
+CREATE COMPUTE MODULE IN_OUT_MF_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+			DECLARE inref REFERENCE TO InputRoot.XMLNSC.Customer.Details;
+			SET OutputRoot.XMLNSC.Customer.Details.Info = inref.FirstName||' '||inref.LastName||', '||inref.Address;
+			
+			
+	END;
+END MODULE;

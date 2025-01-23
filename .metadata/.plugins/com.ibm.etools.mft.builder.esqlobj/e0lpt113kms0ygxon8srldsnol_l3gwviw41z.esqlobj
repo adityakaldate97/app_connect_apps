@@ -1,0 +1,35 @@
+CREATE COMPUTE MODULE Vmf1_Compute
+	
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+
+-- Select data from TABLE_ONE in DSN1
+DECLARE sqlQuery1 CHAR 'SELECT * FROM Database.' || DSN1 || '.Schema.TABLE_ONE';
+DECLARE result1 REFERENCE TO Database.ExecuteQuery(DATABASE.CONNECTION(DSN1), sqlQuery1);
+
+-- Select data from TABLE_TWO in DSN2
+DECLARE sqlQuery2 CHAR 'SELECT * FROM Database.' || DSN2 || '.Schema.TABLE_TWO';
+DECLARE result2 REFERENCE TO Database.ExecuteQuery(DATABASE.CONNECTION(DSN2), sqlQuery2);
+		
+		
+		--UPDATE Database.{DSN1}.Schema.TABLE_ONE
+		
+		-- CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

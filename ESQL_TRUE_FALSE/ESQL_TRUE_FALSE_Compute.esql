@@ -1,0 +1,35 @@
+
+
+CREATE COMPUTE MODULE ESQL_TRUE_FALSE_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+  BEGIN
+        -- Copy the entire input message to the output
+        CALL CopyEntireMessage();
+        CALL sky();
+        
+
+        -- Return false to indicate some condition
+        RETURN false; 
+    END;
+
+    CREATE PROCEDURE CopyEntireMessage() 
+    BEGIN
+     
+        -- Copy the entire input message to the output
+        SET OutputRoot = InputRoot;
+ 
+
+        -- Set the MessageType to ensure downstream processing knows the type
+        SET OutputRoot.Properties.MessageType = InputRoot.Properties.MessageType;
+        Propagate to terminal 'out';
+            END;
+    CREATE PROCEDURE sky() 
+    BEGIN
+        -- Copy the entire input message to the output
+        SET OutputRoot = InputRoot;
+
+        -- Set the MessageType to ensure downstream processing knows the type
+        --SET OutputRoot.Properties.MessageType = InputRoot.Properties.MessageType;
+        --
+    END;
+        END MODULE;

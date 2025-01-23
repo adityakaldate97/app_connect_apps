@@ -1,0 +1,10 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		
+			DECLARE Inref REFERENCE TO InputRoot.XMLNSC.root ;
+			CREATE FIELD OutputRoot.JSON.Data;
+			DECLARE Outref REFERENCE TO OutputRoot.JSON.Data;
+			SET Outref.new_root.new_data = Inref.data; 
+			SET Outref.new_root.new_data1 = Inref.data1;
+			
+	END;

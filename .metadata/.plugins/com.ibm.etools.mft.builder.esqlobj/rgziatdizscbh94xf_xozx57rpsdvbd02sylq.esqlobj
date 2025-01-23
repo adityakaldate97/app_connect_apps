@@ -1,0 +1,4 @@
+CREATE PROCEDURE LogDepartmentDetails(department_id, department_name)
+BEGIN
+    -- Log or display department details
+END;
